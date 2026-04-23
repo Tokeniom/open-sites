@@ -3,12 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tokeniom — Coming Soon</title>
-  <meta name="description" content="Tokeniom — образовательная программа по арбитражу цифровых активов и ИИ-агент. Первая когорта, ранний доступ, paper trading." />
+  <title>Tokeniom · Образовательная программа по арбитражу цифровых активов</title>
+  <meta name="description" content="Образовательная программа по арбитражу цифровых активов + ИИ-агент. Первая когорта Q3 2026. Подпишись на ранний доступ." />
   <meta name="theme-color" content="#0D1B26" />
+  <meta property="og:title" content="Tokeniom · Образовательная программа по арбитражу цифровых активов" />
+  <meta property="og:description" content="Образовательная программа по арбитражу цифровых активов + ИИ-агент. Первая когорта Q3 2026. Подпишись на ранний доступ." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tokeniom.com" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tokeniom · Образовательная программа по арбитражу цифровых активов" />
+  <meta name="twitter:description" content="Образовательная программа по арбитражу цифровых активов + ИИ-агент. Первая когорта Q3 2026. Подпишись на ранний доступ." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 54 28'%3E%3Cpath d='M8 20 C8 13 14 8 22 8 L34 8 L38 4 L40 6 L40 14 C40 17 37 20 34 20 Z' fill='%238B93F6'/%3E%3Cpath d='M38 8 L42 4 L42 10 Z' fill='%238B93F6'/%3E%3Crect x='4' y='22' width='42' height='2' fill='%238B93F6'/%3E%3C/svg%3E" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tokeniom",
+    "url": "https://tokeniom.com",
+    "logo": "https://tokeniom.com/favicon.svg"
+  }
+  </script>
   <style>
     :root {
       --ink: #0D1B26;
@@ -18,19 +35,21 @@
       --coal: #555B66;
       --ash: #9AA0AD;
       --paper: #FFFFFF;
-      --container: min(1120px, calc(100vw - 40px));
+      --danger: #F26D7D;
+      --container: min(1120px, calc(100vw - 32px));
       --radius: 14px;
-      --shadow: 0 28px 80px rgba(13, 27, 38, 0.12);
+      --shadow-soft: 0 20px 60px rgba(13, 27, 38, 0.08);
+      --shadow-hero: 0 24px 60px rgba(139, 147, 246, 0.16);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
+      background: var(--paper);
+      color: var(--ink);
       font-family: 'Montserrat', system-ui, sans-serif;
       font-weight: 500;
-      color: var(--ink);
-      background: var(--paper);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -64,7 +83,7 @@
     }
 
     .brand-word {
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 800;
       letter-spacing: 0.18em;
     }
@@ -73,23 +92,36 @@
       position: relative;
       min-height: 100svh;
       overflow: hidden;
-      background: var(--ink);
+      background:
+        radial-gradient(circle at 16% 14%, rgba(139, 147, 246, 0.14), transparent 28%),
+        radial-gradient(circle at 84% 82%, rgba(90, 195, 240, 0.08), transparent 24%),
+        var(--ink);
       color: var(--paper);
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      right: -6%;
-      bottom: -14%;
-      width: min(54vw, 760px);
-      height: min(54vw, 760px);
+      right: -12%;
+      bottom: -18%;
+      width: min(66vw, 860px);
+      height: min(58vw, 720px);
       transform: rotate(-8deg);
-      opacity: 0.92;
-      background-image: radial-gradient(var(--periwinkle) 1.4px, transparent 1.4px);
-      background-size: 14px 14px;
-      mask-image: radial-gradient(ellipse at 60% 60%, black 0%, transparent 70%);
-      -webkit-mask-image: radial-gradient(ellipse at 60% 60%, black 0%, transparent 70%);
+      opacity: 0.95;
+      background-image: radial-gradient(var(--periwinkle) 1.32px, transparent 1.32px);
+      background-size: 13px 13px;
+      mask-image: radial-gradient(ellipse at 62% 58%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.82) 34%, rgba(0,0,0,0.18) 61%, transparent 76%);
+      -webkit-mask-image: radial-gradient(ellipse at 62% 58%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.82) 34%, rgba(0,0,0,0.18) 61%, transparent 76%);
+      filter: saturate(1.08);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 120px;
+      background: linear-gradient(180deg, rgba(13, 27, 38, 0) 0%, rgba(13, 27, 38, 0.22) 100%);
       pointer-events: none;
     }
 
@@ -99,14 +131,14 @@
       min-height: 100svh;
       display: flex;
       flex-direction: column;
-      padding: 28px 0 48px;
+      padding: 24px 0 36px;
     }
 
     .topbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
     }
 
     .topbar .brand-word { color: var(--paper); }
@@ -123,25 +155,25 @@
     .hero-copy {
       margin: auto 0;
       max-width: 820px;
-      padding: 48px 0 12px;
+      padding: 40px 0 18px;
     }
 
     .hero-eyebrow {
       margin: 0 0 18px;
       color: var(--periwinkle);
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
     }
 
-    .hero-title {
+    h1.hero-title {
       margin: 0;
       max-width: 10.5ch;
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      line-height: 0.94;
-      font-weight: 800;
+      font-size: clamp(3rem, 9vw, 5rem);
+      line-height: 0.95;
       letter-spacing: -0.055em;
+      font-weight: 800;
     }
 
     .hero-title .accent { color: var(--periwinkle); }
@@ -150,7 +182,7 @@
       margin: 22px 0 0;
       max-width: 540px;
       color: rgba(255, 255, 255, 0.75);
-      font-size: clamp(0.95rem, 1.6vw, 1.08rem);
+      font-size: clamp(0.95rem, 1.8vw, 1.08rem);
       line-height: 1.72;
     }
 
@@ -161,59 +193,98 @@
 
     .form-row {
       display: flex;
-      align-items: stretch;
+      flex-direction: column;
       gap: 12px;
     }
 
-    .input {
+    .input-wrap {
+      position: relative;
       flex: 1 1 auto;
+    }
+
+    .input {
+      width: 100%;
       min-height: 58px;
       padding: 0 18px;
       border-radius: 999px;
-      border: 1px solid rgba(224, 229, 237, 0.2);
-      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid rgba(224, 229, 237, 0.22);
+      background: rgba(255, 255, 255, 0.985);
       color: var(--ink);
       outline: none;
-      transition: border-color 160ms ease, box-shadow 160ms ease;
+      transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
     }
 
     .input::placeholder { color: #7d8593; }
 
     .input:focus {
       border-color: var(--periwinkle);
-      box-shadow: 0 0 0 4px rgba(139, 147, 246, 0.2);
+      box-shadow: 0 0 0 4px rgba(139, 147, 246, 0.22);
+    }
+
+    .input[aria-invalid="true"] {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 4px rgba(242, 109, 125, 0.16);
     }
 
     .button {
-      flex: 0 0 auto;
       min-height: 58px;
       padding: 0 24px;
       border: 0;
       border-radius: 999px;
-      background: var(--periwinkle);
+      background: linear-gradient(180deg, #98a0ff 0%, var(--periwinkle) 100%);
       color: var(--ink);
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 18px 44px rgba(139, 147, 246, 0.22);
-      transition: transform 160ms ease, filter 160ms ease;
+      box-shadow: var(--shadow-hero);
+      transition: transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
     }
 
-    .button:hover { transform: translateY(-1px); filter: brightness(1.02); }
+    .button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+      box-shadow: 0 28px 72px rgba(139, 147, 246, 0.22);
+    }
+
     .button:active { transform: translateY(0); }
 
-    .microcopy {
+    .button:focus-visible,
+    .input:focus-visible {
+      outline: none;
+    }
+
+    .status,
+    .microcopy,
+    .error-text {
       margin: 12px 0 0;
       font-size: 0.75rem;
       line-height: 1.6;
-      color: var(--ash);
+    }
+
+    .microcopy { color: var(--ash); }
+    .status {
+      color: var(--paper);
+      display: none;
+    }
+
+    .status[data-visible="true"] {
+      display: block;
+    }
+
+    .error-text {
+      color: var(--danger);
+      display: none;
+    }
+
+    .error-text[data-visible="true"] {
+      display: block;
     }
 
     .section {
-      padding: 88px 0;
+      padding: 68px 0;
     }
 
     .section-title {
-      margin: 0 0 26px;
+      margin: 0 0 24px;
       font-size: 1.75rem;
       line-height: 1.15;
       font-weight: 700;
@@ -223,19 +294,19 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .card {
       padding: 1.5rem;
       border: 1px solid var(--mist);
-      border-radius: 14px;
+      border-radius: var(--radius);
       background: var(--paper);
       box-shadow: 0 10px 30px rgba(13, 27, 38, 0.04);
     }
 
-    .card h3 {
+    .card h2 {
       margin: 0 0 12px;
       font-size: 1.08rem;
       line-height: 1.35;
@@ -257,33 +328,32 @@
 
     .paper-section .section-title {
       color: var(--paper);
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .metrics {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      grid-template-columns: 1fr;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .metric {
-      padding: 18px 20px;
+      min-height: 94px;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 16px 18px;
       text-align: center;
-      min-height: 112px;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-size: 1.5rem;
       line-height: 1.05;
-      font-weight: 800;
       letter-spacing: -0.05em;
+      font-weight: 800;
       color: var(--paper);
     }
 
     .metric + .metric {
-      border-left: 1px solid var(--coal);
+      border-top: 1px solid var(--coal);
     }
 
     .metric.primary {
@@ -301,15 +371,13 @@
     .footer {
       background: var(--ink);
       color: var(--paper);
-      padding: 1.5rem 2rem;
       border-top: 1px solid var(--coal);
+      padding: 1.5rem 0;
     }
 
     .footer-row {
-      width: var(--container);
-      margin: 0 auto;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 18px;
       flex-wrap: wrap;
@@ -323,110 +391,120 @@
       font-size: 0.92rem;
     }
 
-    .footer-right {
-      color: var(--ash);
-    }
+    .footer-right { color: var(--ash); }
 
-    @media (max-width: 960px) {
-      .cards,
-      .metrics {
-        grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+      :root {
+        --container: min(1120px, calc(100vw - 64px));
       }
 
-      .metric + .metric {
-        border-left: 0;
-        border-top: 1px solid var(--coal);
-      }
-    }
-
-    @media (max-width: 720px) {
       .hero-inner {
-        padding: 22px 0 36px;
+        padding: 28px 0 44px;
       }
 
       .hero-copy {
-        padding-top: 34px;
+        padding: 52px 0 14px;
       }
 
       .form-row {
-        flex-direction: column;
+        flex-direction: row;
+        align-items: flex-start;
       }
 
       .button {
-        width: 100%;
+        flex: 0 0 auto;
+        min-width: 246px;
       }
 
       .section {
-        padding: 68px 0;
+        padding: 88px 0;
       }
 
-      .footer {
-        padding: 1.25rem 0 1.5rem;
+      .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .metric {
+        min-height: 120px;
+        font-size: 2.5rem;
+      }
+
+      .metric + .metric {
+        border-top: 0;
+        border-left: 1px solid var(--coal);
       }
 
       .footer-row {
-        align-items: flex-start;
-        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="topbar">
-          <div class="brand" aria-label="Tokeniom">
-            <svg class="whale-mark" viewBox="0 0 54 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M8 20 C8 13, 14 8, 22 8 L34 8 L38 4 L40 6 L40 14 C40 17, 37 20, 34 20 Z" fill="#8B93F6"/>
-              <path d="M38 8 L42 4 L42 10 Z" fill="#8B93F6"/>
-              <rect x="4" y="22" width="42" height="2" fill="#8B93F6"/>
-            </svg>
-            <span class="brand-word">TOKENIOM</span>
-          </div>
-          <div class="domain-note">tokeniom.com</div>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="topbar">
+        <div class="brand" aria-label="Tokeniom">
+          <svg class="whale-mark" viewBox="0 0 54 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 20 C8 13, 14 8, 22 8 L34 8 L38 4 L40 6 L40 14 C40 17, 37 20, 34 20 Z" fill="#8B93F6"/>
+            <path d="M38 8 L42 4 L42 10 Z" fill="#8B93F6"/>
+            <rect x="4" y="22" width="42" height="2" fill="#8B93F6"/>
+          </svg>
+          <span class="brand-word">TOKENIOM</span>
         </div>
-
-        <div class="hero-copy">
-          <p class="hero-eyebrow">СКОРО · Q3 2026</p>
-          <h1 class="hero-title">Океан цифровых активов.<br>Ты — с про<span class="accent">вод</span>ником.</h1>
-          <p class="hero-subtitle">Образовательная программа по арбитражу цифровых активов + ИИ-агент. Мы готовим первую когорту. Подпишись — пришлём условия раннего доступа.</p>
-
-          <form class="hero-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST" novalidate onsubmit="const email=this.querySelector('input[type=email]'); if(!email.checkValidity()){ email.setAttribute('aria-invalid','true'); email.reportValidity(); event.preventDefault(); return false; } email.setAttribute('aria-invalid','false');">
-            <label class="sr-only" for="email">Email</label>
-            <div class="form-row">
-              <input class="input" id="email" name="email" type="email" placeholder="email@example.com" autocomplete="email" aria-label="Ваш email для раннего доступа" aria-required="true" required />
-              <button class="button" type="submit">Получить ранний доступ</button>
-            </div>
-            <p class="microcopy">Без спама. Мы пишем раз в 2–3 недели, когда есть что показать.</p>
-          </form>
-        </div>
+        <div class="domain-note" aria-label="Домен Tokeniom">tokeniom.com</div>
       </div>
-    </section>
 
-    <section class="section">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">СКОРО · Q3 2026</p>
+        <h1 class="hero-title">Океан цифровых активов.<br>Ты — с про<span class="accent">вод</span>ником.</h1>
+        <p class="hero-subtitle">Образовательная программа по арбитражу цифровых активов + ИИ-агент. Мы готовим первую когорту. Подпишись — пришлём условия раннего доступа.</p>
+
+        <form class="hero-form" id="early-access-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST" novalidate>
+          <label class="sr-only" for="email">Email</label>
+          <div class="form-row">
+            <div class="input-wrap">
+              <input class="input" id="email" name="email" type="email" placeholder="email@example.com" autocomplete="email" aria-label="Ваш email для раннего доступа" aria-describedby="email-error email-note form-status" required />
+              <p class="error-text" id="email-error" aria-live="polite"></p>
+            </div>
+            <button class="button" type="submit">Получить ранний доступ</button>
+          </div>
+          <p class="microcopy" id="email-note">Без спама. Мы пишем раз в 2–3 недели, когда есть что показать.</p>
+          <p class="status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="what-we-build-title">
       <div class="container">
-        <h2 class="section-title">Что готовим</h2>
+        <h2 class="section-title" id="what-we-build-title">Что готовим</h2>
         <div class="cards">
           <article class="card">
-            <h3>Образовательная программа</h3>
+            <h2>Образовательная программа</h2>
             <p>10 модулей — от открытия биржевого счёта и цифровой гигиены до продвинутых стратегий арбитража. Видео + текст + чек-листы + задания в интерфейсе агента.</p>
           </article>
           <article class="card">
-            <h3>ИИ-агент для практики</h3>
+            <h2>ИИ-агент для практики</h2>
             <p>Сканирует 12 бирж в поиске неэффективностей. Ты управляешь одним слайдером «риск ↔ доход» — агент сам крутит 20 параметров под капотом.</p>
           </article>
           <article class="card">
-            <h3>Твой капитал — у тебя</h3>
+            <h2>Твой капитал — у тебя</h2>
             <p>Мы не принимаем и не касаемся твоих средств. Учебная практика — на твоей бирже, через ограниченный API-ключ. Для старта достаточно $200.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section paper-section">
+    <section class="section paper-section" aria-labelledby="paper-title">
       <div class="container">
-        <h2 class="section-title">Уже работает — в режиме Paper</h2>
+        <h2 class="section-title" id="paper-title">Уже работает — в режиме Paper</h2>
         <div class="metrics" aria-label="Промежуточные результаты paper trading">
           <div class="metric primary">+$1,882</div>
           <div class="metric">WR 81.4%</div>
@@ -439,7 +517,7 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-row">
+    <div class="container footer-row">
       <div class="footer-left">
         <svg class="whale-mark" viewBox="0 0 54 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M8 20 C8 13, 14 8, 22 8 L34 8 L38 4 L40 6 L40 14 C40 17, 37 20, 34 20 Z" fill="#8B93F6"/>
@@ -448,8 +526,75 @@
         </svg>
         <span>© 2026 Tokeniom</span>
       </div>
-      <div class="footer-right">tokeniom.com</div>
+      <div class="footer-right" aria-label="Домен Tokeniom">tokeniom.com</div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById('early-access-form');
+      const email = document.getElementById('email');
+      const error = document.getElementById('email-error');
+      const status = document.getElementById('form-status');
+
+      function showError(message) {
+        error.textContent = message;
+        error.dataset.visible = 'true';
+        email.setAttribute('aria-invalid', 'true');
+        status.dataset.visible = 'false';
+        status.textContent = '';
+      }
+
+      function clearError() {
+        error.textContent = '';
+        error.dataset.visible = 'false';
+        email.setAttribute('aria-invalid', 'false');
+      }
+
+      function showSuccess(message) {
+        status.textContent = message;
+        status.dataset.visible = 'true';
+      }
+
+      email.addEventListener('input', function () {
+        if (email.validity.valid) clearError();
+      });
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        if (!email.validity.valid) {
+          if (email.validity.valueMissing) {
+            showError('Укажи e-mail, чтобы мы могли написать тебе о запуске.');
+          } else {
+            showError('Похоже, здесь ошибка в e-mail. Проверь формат.');
+          }
+          email.focus();
+          return;
+        }
+
+        clearError();
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json'
+            },
+            body: new FormData(form)
+          });
+
+          if (!response.ok) {
+            throw new Error('submit_failed');
+          }
+
+          form.reset();
+          showSuccess('Записали. Напишем, когда будет что показать.');
+        } catch (e) {
+          showError('Не получилось отправить форму. Попробуй ещё раз чуть позже.');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
