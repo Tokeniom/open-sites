@@ -76,16 +76,33 @@
       gap: 14px;
     }
 
-    .whale-mark {
-      width: 54px;
-      height: 28px;
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: inherit;
+    }
+
+    .brand-mark {
+      width: 72px;
+      height: 34px;
       flex: 0 0 auto;
+      color: currentColor;
     }
 
     .brand-word {
       font-size: 0.98rem;
       font-weight: 800;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.06em;
+    }
+
+    .brand-tm {
+      font-size: 0.46rem;
+      font-weight: 700;
+      line-height: 1;
+      align-self: flex-end;
+      transform: translateY(-0.15rem);
+      opacity: 0.9;
     }
 
     .hero {
@@ -450,12 +467,15 @@
     <div class="container hero-inner">
       <div class="topbar">
         <div class="brand" aria-label="Tokeniom">
-          <svg class="whale-mark" viewBox="0 0 54 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M8 20 C8 13, 14 8, 22 8 L34 8 L38 4 L40 6 L40 14 C40 17, 37 20, 34 20 Z" fill="#8B93F6"/>
-            <path d="M38 8 L42 4 L42 10 Z" fill="#8B93F6"/>
-            <rect x="4" y="22" width="42" height="2" fill="#8B93F6"/>
-          </svg>
-          <span class="brand-word">TOKENIOM</span>
+          <div class="brand-lockup">
+            <svg class="brand-mark" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none">
+              <path d="M18 39V24C18 15.5 23.5 10 31.5 10H51.5C58.5 10 63 13.6 63 19.6C63 25.2 58.9 28.6 52 28.6H40.6C34.4 28.6 30.8 31.9 30.8 37.4V39" stroke="currentColor" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M73 12V38" stroke="currentColor" stroke-width="8.5" stroke-linecap="round"/>
+              <path d="M16 49H78" stroke="currentColor" stroke-width="8.5" stroke-linecap="round"/>
+            </svg>
+            <span class="brand-tm">®</span>
+            <span class="brand-word">TOKENIOM</span>
+          </div>
         </div>
         <div class="domain-note" aria-label="Домен Tokeniom">tokeniom.com</div>
       </div>
@@ -519,10 +539,10 @@
   <footer class="footer">
     <div class="container footer-row">
       <div class="footer-left">
-        <svg class="whale-mark" viewBox="0 0 54 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M8 20 C8 13, 14 8, 22 8 L34 8 L38 4 L40 6 L40 14 C40 17, 37 20, 34 20 Z" fill="#8B93F6"/>
-          <path d="M38 8 L42 4 L42 10 Z" fill="#8B93F6"/>
-          <rect x="4" y="22" width="42" height="2" fill="#8B93F6"/>
+        <svg class="brand-mark" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" style="width:56px;height:28px;color:var(--periwinkle)">
+          <path d="M18 39V24C18 15.5 23.5 10 31.5 10H51.5C58.5 10 63 13.6 63 19.6C63 25.2 58.9 28.6 52 28.6H40.6C34.4 28.6 30.8 31.9 30.8 37.4V39" stroke="currentColor" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M73 12V38" stroke="currentColor" stroke-width="8.5" stroke-linecap="round"/>
+          <path d="M16 49H78" stroke="currentColor" stroke-width="8.5" stroke-linecap="round"/>
         </svg>
         <span>© 2026 Tokeniom</span>
       </div>
